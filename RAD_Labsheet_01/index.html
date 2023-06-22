@@ -1,0 +1,168 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="assets/styles.css">-->
+    <style>
+      div {
+        background: #aeaeaa73;
+        width: 27vw;
+        height: 30vh;
+        display: block;
+        margin: auto;
+        margin-bottom: 72px;
+        border-radius: 12px;
+      }
+
+      div > h4 {
+        padding-left: 6%;
+        padding-top: 6%;
+        margin: 0;
+        padding-bottom: 1%;
+      }
+
+      div > input {
+        margin-left: 8.5%;
+        height: 11.5%;
+        width: 77%;
+        border-radius: 4px;
+        background-color: #f6f4f1;
+        border: 0px;
+      }
+
+      #click {
+        margin-inline: 10%;
+        margin-block: 3%;
+        width: 31%;
+        height: 15%;
+        border-radius: 8px;
+        text-decoration: none;
+        border: 0px;
+        background: lawngreen;
+        font-weight: bold;
+      }
+
+      #click:hover {
+        cursor: pointer;
+        background: blanchedalmond;
+      }
+
+      #click2, #click3 {
+        margin-inline: 10%;
+        margin-block: 3%;
+        width: 31%;
+        height: 15%;
+        border-radius: 8px;
+        text-decoration: none;
+        border: 0px;
+        background: lawngreen;
+        font-weight: bold;
+      }
+
+      #click2:hover {
+        cursor: pointer;
+        background: blanchedalmond;
+      }
+
+      form {
+        width: 27vw;
+        height: 30vh;
+        display: block;
+        margin: auto;
+        margin-bottom: 72px;
+        border-radius: 12px;
+        border: 0.1em solid black;
+      }
+
+      form > h2 {
+        padding-left: 6%;
+        padding-top: 6%;
+        margin: 0;
+        padding-bottom: 1%;
+      }
+
+      .checkBox {
+        margin: 12px 10px 0px 26px;
+      }
+
+
+
+      input[type="checkbox"]:checked + label {
+        font-weight: 700;
+      }
+
+      input[type="checkbox"]:not(:checked) + label {
+        font-weight: normal;
+      }
+
+
+      .checkBox:not(:checked) + label {
+        font-weight: normal;
+      }
+
+      .checkBox:active + label {
+        color: lawngreen;
+      }
+
+      #click3 {
+        background: dimgray;
+        width: 41%;
+      }
+
+      #click3:hover {
+        cursor: pointer;
+        background: #f6f4f1;
+        color: black;
+        border: 0.1em solid black;
+      }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <h4>Name :</h4>
+    <input type="text" id="name" placeholder="insert a name..">
+
+    <h4>Hometown :</h4>
+    <input type="text" id="town" placeholder="insert home town..">
+    <br>
+    <button id="click">Click</button>
+</div>
+
+<div>
+    <h4>Name :</h4>
+    <input type="text" id="name2" placeholder="insert a name..">
+
+    <h4>Birthday :</h4>
+    <input type="text" id="bth" placeholder="insert home town..">
+    <br>
+    <button id="click2">Click</button>
+</div>
+
+<form>
+    <h2>Available hotel packages</h2>
+    <input class="checkBox" type="checkbox" name="Wedding package" value="dasda">
+    <lable>Wedding package</lable>
+    <br>
+
+    <lable><input class="checkBox" type="checkbox" name="Birthday package" value="dasda">Birthday package</lable>
+    <br>
+    <lable><input class="checkBox" type="checkbox" name="Normal Function package" value="dasda">Normal Function package
+    </lable>
+    <br>
+    <lable><input class="checkBox" type="checkbox" name="Normal Function package" value="dasda">Normal Function package
+    </lable>
+    <br>
+
+    <button id="click3" type="submit">Submit</button>
+</form>
+
+<script src="assets/script.js"></script>
+</body>
+
+</html>
