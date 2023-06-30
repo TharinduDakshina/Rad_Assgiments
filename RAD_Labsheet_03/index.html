@@ -1,0 +1,154 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <h1>Activity 01</h1>
+<button onclick="concatName()" > Q1</button>
+<br>
+<button onclick="loverCase()" > Q2.a</button>
+<br>
+<button onclick="upperCase()" > Q2.b</button>
+<br>
+<button onclick="splitString()" > Q2.c</button>
+<br>
+<button onclick="findIndex()" > Q2.d</button>
+<h1>Activity 02</h1>
+<br>
+<label >Boolean value 01 :</label> <input type="text" id="value_1"> <label >Boolean value 02 :</label> <input type="text" id="value_2">
+<button onclick="boolean()" > Q1</button>
+<br>
+<button onclick="typex()" > Q2. Check the type of number  </button>
+<br>
+<button onclick="checkDate()" > Q3</button>
+<br>
+<button onclick="stringLength()" > Q4</button>
+
+<H1>Activity 03</H1>
+
+<button onclick="findGodWar()" > Q1</button>
+<br>
+<button onclick="keyMap()" > Q2</button>
+<br>
+<button onclick="keyMap()" > Q3</button>
+
+<script>
+
+function keyMap(){
+  const keyandValue = [
+  ['Name', 'John'],
+  ['Age', 30],
+  ['City', 'Colombo']
+];
+
+  const myMap = createMapFromArray(keyandValue);
+  console.log(myMap);
+
+}
+
+function createMapFromArray(keyandValue){
+  const myMap = new Map(keyValuePairs);
+  return myMap;
+}
+
+// class Map(3) {
+//   'Name' => 'John',
+//   'Age' => 30,
+//   'City' => 'Colombo'
+// };
+
+
+  function findGodWar(){
+    const games = ["The Last of Us", "Uncharted", "God of War", "Bloodborne"];
+    alert("God of War index is : "+games.indexOf("God of War"));
+  }
+
+function stringLength(){
+  var str="OceanGate";
+  if(str.length>10){
+    alert(str+" length is "+str.length);
+  }else{
+   // alert(str+" length is "+str.length);
+  }
+}
+
+  function checkDate(){
+    var date=new Date();
+    var day=date.getDate();
+    var month=date.getMonth()+1;
+    var year=date.getFullYear();
+    
+    alert("Today is "+year+" / "+month+" / "+day);
+  }
+
+function typex(){
+  let nub=422.56;
+  alert(typeof(nub));
+}
+
+function boolean(){
+  let vall= document.getElementById("value_1").value;
+  let val2= document.getElementById("value_2").value;
+
+  console.log(vall);
+  console.log(val2);
+  
+
+  if( val2==vall && (vall==="true" | val2==="true" | val2==1 | vall==1)){
+    alert("Resault is true .");
+  }else{
+    alert("Resault is false .");
+
+  }
+}
+
+
+function findIndex(){
+  var text="Under More Options, you can specify the number of characters to be entered in the response box by entering a value in the Maximum Length field. The maximum value is 250 characters.";
+  countIndex(text);
+}
+
+function countIndex(str){
+  alert("The index of : "+str.indexOf("the"));
+}
+
+function splitString(){
+  var str="Programmo,Phobia";
+  alert("["+str.split(',')[0]+","+str.split(',')[1]+"]");
+}
+
+function loverCase(){
+  convertLoverCase("ProgrammoPhobia");
+}
+
+function upperCase(){
+  convertUpperCase("ProgrammoPhobia");
+}
+
+function convertUpperCase(varible){
+  alert(varible.toUpperCase());
+}
+
+function convertLoverCase(varible){
+  alert(varible.toLowerCase());
+}
+
+  function concatName(){
+    console.log("Saman")
+    var name1="Programmo";
+    var name2="Phobia";
+
+    var tempName=(name1.concat(" ")).concat(name2);
+    alert(tempName,1);
+  }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi</h1>
+    <script>
+
+        class Shape{
+                color;
+
+                constructor(color){
+                    this.color=color;
+                }
+
+                getColor(color){
+                    console.log("color : "+this.color);
+                }
+            }
+
+        class Tranglr extends Shape{
+            width;
+            height;
+            
+            constructor(color,width,height){
+                super(color);
+                this.width=width;
+                this.height=height;
+            }
+
+
+            getArea(width,height){
+                console.log("Rectangle area is : "+this.height*this.width*0.5);
+                console.log(this.color);
+            }
+        }
+
+
+        class Circle extends Shape{
+                radius;
+
+                constructor(color,radius){
+                    super(color);
+                    this.radius=radius;
+                }
+
+                getArea(radius){
+                    console.log("Circle area is : "+(22.0/7)*this.radius*this.radius);
+                    console.log(this.color);
+                }
+        }
+
+    
+
+       
+
+        var temp=new Tranglr('Gray',5,2);
+        temp.getArea();
+
+        var circle=new Circle("Red",5.0);
+        circle.getArea();
+    </script>
+</body>
+</html>
