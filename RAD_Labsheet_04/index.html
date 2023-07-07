@@ -1,0 +1,254 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            button:hover{
+                cursor: pointer;
+                background-color: aqua;
+                color: azure;
+                transform: scale(1.2);
+            }
+        </style>
+    </head>
+    <body>
+
+    <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="rectangle()">Activity 01</button>
+    <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="rectangleArea()">Activity 02</button>
+    <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="getDogDetail()">Activity 03</button>
+
+    <script>
+        class Rectangle{
+            width;
+            height;
+
+            constructor(width,height) {
+                this.width=width;
+                this.height=height;
+            }
+
+            getArea(){
+                return this.width*this.height;
+            }
+        }
+
+        function rectangle(){
+            var rec1=new Rectangle(15,45);
+            alert("Width of the rectangle is : "+rec1.width);
+        }
+
+        function rectangleArea(){
+            var rec1=new Rectangle(20,10);
+            var rec2=new Rectangle(60,10);
+
+            alert("Area of the rectangle is : "+rec1.getArea()+"\nArea of the rectangle is : "+rec1.getArea());
+        }
+
+        //--------------------------------------Activity 03------------------------------------------------//
+
+
+        class Dog{
+            breed;
+            age;
+            color;
+
+            constructor(breed,age,color) {
+                this.breed=breed;
+                this.age=age;
+                this.color=color;
+            }
+
+            eat(){
+                return this.breed +" is eat.";
+            }
+
+            sleep(){
+                return this.breed+"is sleep.";
+            }
+
+            sit(){
+                return  this.breed+"is sit.";
+            }
+
+            run(){
+                return this.breed+"is run.";
+            }
+        }
+
+        function getDogDetail(){
+            var dog1=new Dog("Pug",3,'Black');
+            var dog2=new Dog("Boxer",2,'White');
+            var dog3=new Dog("Poodel",1,'Black');
+
+
+            alert(dog1.breed+" age is "+dog1.age+"\n"+dog1.sit()+"\n\n"+dog2.breed+" color is :"+dog2.color+"\n"+dog2.run()+"\n\n"+dog3.breed+" age is "+dog3.age+"\n"+dog3.eat());
+        }
+
+       // --------------------------------------------------------------Activity 04 ----------------------------------------------------------------
+
+        class Employee{
+            empNo;
+            empName;
+            empAddress;
+            empContactNumber;
+            empNICNumber;
+            joinDate;
+            destinationDate;
+            salary;
+            arrivesTime;
+            leavesTime;
+            lunchType;
+
+            get lunchType() {
+                return this._lunchType;
+            }
+            set lunchType(value) {
+                this._lunchType = value;
+            }
+
+            get arrivesTime() {
+                return this._arrivesTime;
+            }
+
+            set arrivesTime(value) {
+                this._arrivesTime = value;
+            }
+
+            get leavesTime() {
+                return this._leavesTime;
+            }
+
+            set leavesTime(value) {
+                this._leavesTime = value;
+            }
+
+
+            get empNo() {
+                return this._empNo;
+            }
+
+            set empNo(value) {
+                this._empNo = value;
+            }
+
+            get empName() {
+                return this._empName;
+            }
+
+            set empName(value) {
+                this._empName = value;
+            }
+
+            get empAddress() {
+                return this._empAddress;
+            }
+
+            set empAddress(value) {
+                this._empAddress = value;
+            }
+
+            get empContactNumber() {
+                return this._empContactNumber;
+            }
+
+            set empContactNumber(value) {
+                this._empContactNumber = value;
+            }
+
+            get empNICNumber() {
+                return this._empNICNumber;
+            }
+
+            set empNICNumber(value) {
+                this._empNICNumber = value;
+            }
+
+            get joinDate() {
+                return this._joinDate;
+            }
+
+            set joinDate(value) {
+                this._joinDate = value;
+            }
+
+            get destinationDate() {
+                return this._destinationDate;
+            }
+
+            set destinationDate(value) {
+                this._destinationDate = value;
+            }
+
+            get salary() {
+                return this._salary;
+            }
+
+            set salary(value) {
+                this._salary = value;
+            }
+
+            constructor(empNo,empName,empAddress,empContactNumber,empNICNumber,joinDate,destinationDate,salary,arrivesTime,leavesTime,lunchType) {
+                this._empNo = empNo;
+                this._empName = empName;
+                this._empAddress = empAddress;
+                this._empContactNumber = empContactNumber;
+                this._empNICNumber = empNICNumber;
+                this._joinDate = joinDate;
+                this._destinationDate = destinationDate;
+                this._salary = salary;
+                this._arrivesTime=arrivesTime;
+                this._leavesTime=leavesTime;
+                this._lunchType = lunchType;
+            }
+        }
+
+        class temporaryEmployees extends Employee{
+            timeDuration;
+
+            constructor(empNo,empName,empAddress,empContactNumber,empNICNumber,joinDate,destinationDate,salary,arrivesTime,leavesTime,lunchType,timeDuration) {
+                super(empNo,empName,empAddress,empContactNumber,empNICNumber,joinDate,destinationDate,salary,arrivesTime,leavesTime,lunchType);
+                this._timeDuration = timeDuration;
+            }
+
+
+            get timeDuration() {
+                return this._timeDuration;
+            }
+
+            set timeDuration(value) {
+                this._timeDuration = value;
+            }
+        }
+
+        class contractEmployee extends Employee{
+            timeDuration;
+
+            constructor(empNo,empName,empAddress,empContactNumber,empNICNumber,joinDate,destinationDate,salary,arrivesTime,leavesTime,lunchType,timeDuration) {
+                super(empNo,empName,empAddress,empContactNumber,empNICNumber,joinDate,destinationDate,salary,arrivesTime,leavesTime,lunchType);
+                this._timeDuration = timeDuration;
+            }
+
+
+            get timeDuration() {
+                return this._timeDuration;
+            }
+
+            set timeDuration(value) {
+                this._timeDuration = value;
+            }
+        }
+
+        class permanentEmployees extends Employee{
+            constructor(empNo,empName,empAddress,empContactNumber,empNICNumber,joinDate,destinationDate,salary,arrivesTime,leavesTime,lunchType) {
+                super(empNo,empName,empAddress,empContactNumber,empNICNumber,joinDate,destinationDate,salary,arrivesTime,leavesTime,lunchType);
+            }
+        }
+
+    </script>
+
+    </body>
+</html>
