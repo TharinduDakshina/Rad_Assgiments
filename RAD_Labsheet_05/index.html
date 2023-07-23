@@ -46,6 +46,7 @@
       justify-content: center;
       align-items: center;
     }
+
   </style>
 </head>
 
@@ -53,95 +54,95 @@
   <form class="row g-3 needs-validation p-3" novalidate >
 
   <div class="col-md-4">
-    <label for="validationCustom01" class="form-label p-1">Index Number</label>
-    <input type="text" class="form-control" id="validationCustom01" placeholder="S001" required>
+    <label for="index" class="form-label p-1">Index Number</label>
+    <input type="text" class="form-control" id="index" placeholder="S001" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
 
   <div class="col-md-4">
-    <label for="validationCustom02" class="form-label">Name</label>
-    <input type="text" class="form-control" id="validationCustom02" placeholder="Sasanka"  required>
+    <label for="useName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="useName" placeholder="Sasanka"  required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
 
     <div class="col-md-4">
-      <label for="validationCustom06" class="form-label">DoB</label>
-      <input type="date" class="form-control" id="validationCustom06" placeholder="yyyy-mm-dd"  required>
+      <label for="dob" class="form-label">DoB</label>
+      <input type="date" class="form-control" id="dob" placeholder="yyyy-mm-dd"  required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
 
   <div class="col-md-6">
-    <label for="validationCustom03" class="form-label">Address</label>
-    <input type="text" class="form-control" id="validationCustom03" required>
+    <label for="address" class="form-label">Address</label>
+    <input type="text" class="form-control" id="address" required>
     <div class="invalid-feedback">
       Looks not good!
     </div>
   </div>
 
     <div class="col-md-3">
-      <label for="validationCustom07" class="form-label">Contact Number</label>
-      <input type="tel" class="form-control" id="validationCustom07" placeholder="+94761339805" required>
+      <label for="contactNub" class="form-label">Contact Number</label>
+      <input type="tel" class="form-control" id="contactNub" placeholder="+94xxxxxxxxx" required>
       <div class="invalid-feedback">
         Looks not good!
       </div>
     </div>
 
     <div class="col-md-3">
-      <label for="validationCustom08" class="form-label">Email Address</label>
-      <input type="email" class="form-control" id="validationCustom08" placeholder="abc@gmail.com"  required>
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="email" placeholder="abc@gmail.com"  required>
       <div class="invalid-feedback">
         Looks not good!
       </div>
     </div>
 
+
   <div class="col-12">
-    <button class="btn btn-primary" type="button" onclick="getDetails()">Submit form</button>
+    <button class="btn btn-primary form-check" type="submit">Submit form</button>
+    <button class="btn btn-success form-check" type="button" onclick="showDetails()">Submit form</button>
   </div>
 
 </form>
-<div>
 
-</div>
 
 
 <script src="assets/js/bootstrap.min.js"></script>
 
-<script>
-  (() => {
-    'use strict'
+  <script>
+    (() => {
+      'use strict';
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
+      const forms = document.querySelectorAll('.needs-validation');
 
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
+      const handleFormSubmission = (event) => {
+        event.preventDefault();
+
+        const form = event.target;
+
         if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
+          event.stopPropagation();
+        } else {
+          getDetails();
         }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
-</script>
+        form.classList.add('was-validated');
+      };
+
+      // Loop over the forms and attach the submit event listener
+      Array.from(forms).forEach((form) => {
+        form.addEventListener('submit', handleFormSubmission);
+      });
+    })();
+  </script>
 
 <script>
   class Student {
 
-    indexNumber;
-    name;
-    dateOfBirth;
-    address;
-    contactNumber;
-    emailAddress;
 
     constructor(indexNumber,name,dateOfBirth,address,contactNumber,emailAddress) {
       this._indexNumber = indexNumber;
@@ -153,64 +154,86 @@
     }
 
 
-    get indexNumber() {
+   indexNumber() {
       return this._indexNumber;
     }
-
-    set indexNumber(value) {
-      this._indexNumber = value;
-    }
-
-    get name() {
+    name() {
       return this._name;
     }
 
-    set name(value) {
-      this._name = value;
-    }
-
-    get dateOfBirth() {
+    dateOfBirth() {
       return this._dateOfBirth;
     }
 
-    set dateOfBirth(value) {
-      this._dateOfBirth = value;
-    }
-
-    get address() {
+    address() {
       return this._address;
     }
 
-    set address(value) {
-      this._address = value;
-    }
-
-    get contactNumber() {
+    contactNumber() {
       return this._contactNumber;
     }
 
-    set contactNumber(value) {
-      this._contactNumber = value;
-    }
-
-    get emailAddress() {
+    emailAddress() {
       return this._emailAddress;
     }
 
-    set emailAddress(value) {
-      this._emailAddress = value;
-    }
-
   }
 
+
+
+  let std;
   function getDetails(){
-    let index= document.getElementById("validationCustom01").value;
-    console.log(index);
+
+    var index = document.getElementById("index").value;
+    var name = document.getElementById("useName").value;
+    var doB = document.getElementById("dob").value;
+    var address = document.getElementById("address").value;
+    var contact = document.getElementById("contactNub").value;
+    var email = document.getElementById("email").value;
+
+    std = new Student(index, name, doB, address, contact, email);
+
+    console.log(index)
+    console.log(name)
+    console.log(doB)
+    console.log(address)
+    console.log(contact)
+    console.log(email)
+
+
+
+    console.log(std.indexNumber());
+    console.log(std.name());
+    console.log(std.dateOfBirth());
+    console.log(std.address());
+    console.log(std.contactNumber());
+    console.log(std.emailAddress());
+
+    clear()
+
+
   }
 
+  function showDetails(){
 
 
- let std=new Student()
+    alert("Index Number : "+std.indexNumber()+'\n'+
+            "Studen Name : "+std.name()+'\n'+
+            "Student date of birth : "+std.dateOfBirth()+'\n'+
+            "Student Address : "+std.address()+'\n'+
+            "Student Contact : "+std.contactNumber()+'\n'+
+            "Student Email Address : "+std.emailAddress()
+    );
+  }
+
+  function clear(){
+    document.getElementById("index").value="";
+    document.getElementById("useName").value="";
+    document.getElementById("dob").value="";
+    document.getElementById("address").value="";
+    document.getElementById("contactNub").value="";
+    document.getElementById("email").value="";
+  }
 
 </script>
 
