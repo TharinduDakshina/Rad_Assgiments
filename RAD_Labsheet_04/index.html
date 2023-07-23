@@ -7,19 +7,34 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
+            body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div{
+                display: block;
+            }
+
             button:hover{
                 cursor: pointer;
                 background-color: aqua;
-                color: azure;
+                color: #252931;
                 transform: scale(1.2);
             }
         </style>
     </head>
     <body>
 
-    <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="rectangle()">Activity 01</button>
-    <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="rectangleArea()">Activity 02</button>
-    <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="getDogDetail()">Activity 03</button>
+    <div>
+        <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="rectangle()">Activity 01</button>
+        <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="rectangleArea()">Activity 02</button>
+        <button style="color: rgba(120,177,194,0.72);display: flex;margin: 15px;border-radius: 3px;border: #00000000 solid;" onclick="getDogDetail()">Activity 03</button>
+
+    </div>
+
 
     <script>
         class Rectangle{
